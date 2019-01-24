@@ -32,7 +32,8 @@ open class Router {
 		}
 	}
 	
-	class func swiftClassFromString(className: String) -> AnyClass? {
+	//获取类名
+	private class func swiftClassFromString(className: String) -> AnyClass? {
 		// get the project name
 		if  let appName: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String? {
 			// YourProject.className
@@ -43,7 +44,7 @@ open class Router {
 	}
 	
 	///网络配置的路由
-	class func routeTo(_ path:String, params:Parameter?, present: Bool = false , animated: Bool = true) {
+	open class func routeTo(_ path:String, params:Parameter?, present: Bool = false , animated: Bool = true, hidesBottomBarWhenPushed: Bool = true) {
 		//处理网页
 		if path.contains("http") {
 			var customParams = Parameter()
@@ -53,7 +54,7 @@ open class Router {
 					param
 				}
 			}
-			self.jumpTo(WebViewControllerName, params: customParams)
+			self.jumpTo(WebViewControllerName, params: customParams, present: present, animated: animated, hidesBottomBarWhenPushed: hidesBottomBarWhenPushed)
 			return
 		}
 		
@@ -65,14 +66,14 @@ open class Router {
 			} else {
 				parameters = path.urlParameters
 			}
-			self.jumpTo(className, params: parameters)
+			self.jumpTo(className, params: parameters, present: present, animated: animated, hidesBottomBarWhenPushed: hidesBottomBarWhenPushed)
 		} else {
-			self.jumpTo(path, params: params)
+			self.jumpTo(path, params: params, present: present, animated: animated, hidesBottomBarWhenPushed: hidesBottomBarWhenPushed)
 		}
 	}
 	
 	///路由处理
-	private class func jumpTo(_ className:String, params:Parameter?, present: Bool = false , animated: Bool = true , hidesBottomBarWhenPushed: Bool = true) {
+	private class func jumpTo(_ className:String, params:Parameter?, present: Bool = false, animated: Bool = true, hidesBottomBarWhenPushed: Bool = true) {
 		if let classPath = self.swiftClassFromString(className: className) {
 			if let cls = classPath as? Routable.Type {
 				let vc = cls.initWithParams(params: params)
