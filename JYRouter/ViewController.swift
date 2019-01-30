@@ -19,14 +19,14 @@ class ViewController: UIViewController {
 		var params = Parameter()
 		params["title"] = "Keyon"
 		params["userId"] = "123"
-//		Router.routeTo("BViewController", params: params)
-		Router.routeTo("BViewController?title=Keyon&userId=123", params: params)
+		Router.routeTo("BViewController?title=KeyonOne", params: params)
 	}
 	
 	@IBAction func clickTwo(_ sender: Any) {
 		var params = Parameter()
 		params["title"] = "Keyon"
-		Router.routeTo("http://www.baidu.com", params: params)
+		params["userId"] = "123"
+		Router.routeTo("BViewController", params: params)
 	}
 }
 

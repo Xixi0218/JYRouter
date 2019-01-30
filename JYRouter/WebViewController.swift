@@ -11,7 +11,7 @@ import WebKit
 
 class WebViewController: UIViewController,WKUIDelegate,Routable {
 
-	private var webView:WKWebView!
+	public var webView:WKWebView!
 	
 	private var navTitle:String?
 	private var urlStr:String?

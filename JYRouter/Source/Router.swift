@@ -43,28 +43,20 @@ open class Router {
 	
 	///网络配置的路由
 	open class func routeTo(_ path:String, params:Parameter?, present: Bool = false , animated: Bool = true, hidesBottomBarWhenPushed: Bool = true) {
-		//处理网页
-		if path.contains("http") {
+		if let start = path.range(of: "?") {
+			let className = String(path[..<start.lowerBound])
 			var customParams = Parameter()
-			customParams["url"] = path
 			if let params = params {
 				customParams.merge(params) { (param, _) -> Any in
 					param
 				}
 			}
-			self.jumpTo(RouterConfig.shared.webViewController, params: customParams, present: present, animated: animated, hidesBottomBarWhenPushed: hidesBottomBarWhenPushed)
-			return
-		}
-		
-		if let start = path.range(of: "?") {
-			let className = String(path[..<start.lowerBound])
-			var parameters:Parameter?
-			if let params = params {
-				parameters = params
-			} else {
-				parameters = path.urlParameters
+			if let pathParams = path.urlParameters {
+				customParams.merge(pathParams) { (param, _) -> Any in
+					param
+				}
 			}
-			self.jumpTo(className, params: parameters, present: present, animated: animated, hidesBottomBarWhenPushed: hidesBottomBarWhenPushed)
+			self.jumpTo(className, params: customParams, present: present, animated: animated, hidesBottomBarWhenPushed: hidesBottomBarWhenPushed)
 		} else {
 			self.jumpTo(path, params: params, present: present, animated: animated, hidesBottomBarWhenPushed: hidesBottomBarWhenPushed)
 		}
