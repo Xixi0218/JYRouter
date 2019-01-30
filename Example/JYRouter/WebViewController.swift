@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController,WKUIDelegate,Routable {
+class WebViewController: UIViewController,WKUIDelegate,YJYRoutable {
 
 	public var webView:WKWebView!
 	
@@ -22,7 +22,7 @@ class WebViewController: UIViewController,WKUIDelegate,Routable {
 		self.setupWebView()
     }
 	
-	static func initWithParams(params: Parameter?) -> UIViewController {
+	static func initWithParams(params: YJYParameter?) -> UIViewController {
 		let vc = WebViewController()
 		if let params = params {
 			vc.urlStr = params["url"] as? String

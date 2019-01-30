@@ -8,9 +8,9 @@
 
 import UIKit
 
-class BViewController: UIViewController,Routable {
+class BViewController: UIViewController,YJYRoutable {
 
-	static func initWithParams(params: Parameter?) -> UIViewController {
+	static func initWithParams(params: YJYParameter?) -> UIViewController {
 		if let params = params {
 			debugPrint(params)
 		}

@@ -11,7 +11,7 @@ import Foundation
 extension String {
 	
 	/// 从String中截取出参数
-	var yjy_urlParameters: [String: Any]? {
+	public var yjy_urlParameters: [String: Any]? {
 		// 截取是否有参数
 		guard let urlComponents = NSURLComponents(string: self), let queryItems = urlComponents.queryItems else {
 			return nil

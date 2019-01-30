@@ -16,17 +16,17 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func clickOne(_ sender: Any) {
-		var params = Parameter()
+		var params = YJYParameter()
 		params["title"] = "Keyon"
 		params["userId"] = "123"
-		Router.routeTo("BViewController?name=Mike", params: params)
+		YJYRouter.routeTo("BViewController?name=Mike", params: params)
 	}
 	
 	@IBAction func clickTwo(_ sender: Any) {
-		var params = Parameter()
+		var params = YJYParameter()
 		params["title"] = "Keyon"
 		params["userId"] = "123"
-		Router.routeTo("BViewController", params: params)
+		YJYRouter.routeTo("BViewController", params: params)
 	}
 }
 

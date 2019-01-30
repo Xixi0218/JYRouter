@@ -8,17 +8,17 @@
 
 import UIKit
 
-public typealias  Parameter = [String: Any]
+public typealias  YJYParameter = [String: Any]
 
-public protocol Routable {
+public protocol YJYRoutable {
 	/**
 	类的初始化方法 - params 传参字典
 	*/
-	static func initWithParams(params: Parameter?) -> UIViewController
+	static func initWithParams(params: YJYParameter?) -> UIViewController
 }
 
 
-open class Router {
+open class YJYRouter {
 	
 	open class func openTel(_ phone:String) {
 		if let url = URL(string: "tel://\(phone)") {
@@ -42,10 +42,10 @@ open class Router {
 	}
 	
 	///网络配置的路由
-	open class func routeTo(_ path:String, params:Parameter?, present: Bool = false , animated: Bool = true, hidesBottomBarWhenPushed: Bool = true) {
+	open class func routeTo(_ path:String, params:YJYParameter?, present: Bool = false , animated: Bool = true, hidesBottomBarWhenPushed: Bool = true) {
 		if let start = path.range(of: "?") {
 			let className = String(path[..<start.lowerBound])
-			var customParams = Parameter()
+			var customParams = YJYParameter()
 			if let params = params {
 				customParams.merge(params) { (param, _) -> Any in
 					param
@@ -63,9 +63,9 @@ open class Router {
 	}
 	
 	///路由处理
-	private class func jumpTo(_ className:String, params:Parameter?, present: Bool = false, animated: Bool = true, hidesBottomBarWhenPushed: Bool = true) {
+	private class func jumpTo(_ className:String, params:YJYParameter?, present: Bool = false, animated: Bool = true, hidesBottomBarWhenPushed: Bool = true) {
 		if let classPath = self.swiftClassFromString(className: className) {
-			if let cls = classPath as? Routable.Type {
+			if let cls = classPath as? YJYRoutable.Type {
 				let vc = cls.initWithParams(params: params)
 				vc.hidesBottomBarWhenPushed = hidesBottomBarWhenPushed
 				let topViewController = YJYTools.currentTopViewController()

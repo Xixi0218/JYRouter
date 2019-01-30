@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YJYTools: NSObject {
+open class YJYTools: NSObject {
 	
 	///获取当前页面
 	public class func currentTopViewController() -> UIViewController? {
