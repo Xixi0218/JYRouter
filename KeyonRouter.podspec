@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "KeyonRouter"
-  s.version      = "0.0.2"
+  s.version      = "0.0.4"
   s.summary      = "swift的路由."
   s.description  = <<-DESC
                     自己写的一个swift的路由

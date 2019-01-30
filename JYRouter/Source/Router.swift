@@ -7,8 +7,6 @@
 //
 
 import UIKit
-//可自行配置webViewController控制器 最好在AppDelegate启动时候调用
-public var WebViewControllerName = "WebViewController"
 
 public typealias  Parameter = [String: Any]
 
