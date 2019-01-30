@@ -17,4 +17,4 @@
     如果2个都传了会进行混合,而且2个有相同的字段那么会优先读取自身传进去的参数
 
 ## 4.使用(因为JYRouter被使用了)
-   pod 'YJYRouter'
+     pod 'YJYRouter'
