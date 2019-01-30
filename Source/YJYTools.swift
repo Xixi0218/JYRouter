@@ -2,13 +2,13 @@
 //  Constants.swift
 //  JYRouter
 //
-//  Created by 叶金永 on 2019/1/23.
+//  Created by Keyon on 2019/1/23.
 //  Copyright © 2019 Keyon. All rights reserved.
 //
 
 import UIKit
 
-class Constants: NSObject {
+class YJYTools: NSObject {
 	
 	///获取当前页面
 	public class func currentTopViewController() -> UIViewController? {

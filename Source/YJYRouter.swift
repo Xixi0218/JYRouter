@@ -2,7 +2,7 @@
 //  Router.swift
 //  Router
 //
-//  Created by 叶金永 on 2019/1/7.
+//  Created by Keyon on 2019/1/7.
 //  Copyright © 2019 Keyon. All rights reserved.
 //
 
@@ -51,7 +51,7 @@ open class Router {
 					param
 				}
 			}
-			if let pathParams = path.urlParameters {
+			if let pathParams = path.yjy_urlParameters {
 				customParams.merge(pathParams) { (param, _) -> Any in
 					param
 				}
@@ -68,7 +68,7 @@ open class Router {
 			if let cls = classPath as? Routable.Type {
 				let vc = cls.initWithParams(params: params)
 				vc.hidesBottomBarWhenPushed = hidesBottomBarWhenPushed
-				let topViewController = Constants.currentTopViewController()
+				let topViewController = YJYTools.currentTopViewController()
 				if topViewController?.navigationController != nil && !present {
 					topViewController?.navigationController?.pushViewController(vc, animated: animated)
 				} else {

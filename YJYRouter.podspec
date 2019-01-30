@@ -1,6 +1,6 @@
 
 Pod::Spec.new do |s|
-  s.name         = "KeyonRouter"
+  s.name         = "YJYRouter"
   s.version      = "0.0.5"
   s.summary      = "swift的路由."
   s.description  = <<-DESC

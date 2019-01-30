@@ -2,7 +2,7 @@
 //  String+Sub.swift
 //  JYRouter
 //
-//  Created by 叶金永 on 2019/1/23.
+//  Created by Keyon on 2019/1/23.
 //  Copyright © 2019 Keyon. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import Foundation
 extension String {
 	
 	/// 从String中截取出参数
-	var urlParameters: [String: Any]? {
+	var yjy_urlParameters: [String: Any]? {
 		// 截取是否有参数
 		guard let urlComponents = NSURLComponents(string: self), let queryItems = urlComponents.queryItems else {
 			return nil

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  JYRouter
 //
-//  Created by 叶金永 on 2019/1/23.
+//  Created by Keyon on 2019/1/23.
 //  Copyright © 2019 Keyon. All rights reserved.
 //
 
@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		RouterConfig.shared.webViewController = "WebViewController"
 		return true
 	}
 

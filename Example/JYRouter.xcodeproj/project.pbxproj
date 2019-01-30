@@ -12,12 +12,11 @@
 		B567AF7021F89E5B00A017AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B567AF6E21F89E5B00A017AE /* Main.storyboard */; };
 		B567AF7221F89E5C00A017AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B567AF7121F89E5C00A017AE /* Assets.xcassets */; };
 		B567AF7521F89E5C00A017AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B567AF7321F89E5C00A017AE /* LaunchScreen.storyboard */; };
-		B567AF7D21F89E6800A017AE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF7C21F89E6800A017AE /* Router.swift */; };
-		B567AF7F21F89E7500A017AE /* String+Sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF7E21F89E7500A017AE /* String+Sub.swift */; };
-		B567AF8121F89EBD00A017AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF8021F89EBD00A017AE /* Constants.swift */; };
 		B567AF8321F8A0EF00A017AE /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF8221F8A0EF00A017AE /* BViewController.swift */; };
 		B567AF8521F8A39800A017AE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF8421F8A39800A017AE /* WebViewController.swift */; };
-		B5CC752122016645009AC060 /* RouterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC752022016645009AC060 /* RouterConfig.swift */; };
+		B5CC7528220178BF009AC060 /* YJYTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC7525220178BF009AC060 /* YJYTools.swift */; };
+		B5CC7529220178BF009AC060 /* YJYRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC7526220178BF009AC060 /* YJYRouter.swift */; };
+		B5CC752A220178BF009AC060 /* String+Sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC7527220178BF009AC060 /* String+Sub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +27,11 @@
 		B567AF7121F89E5C00A017AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B567AF7421F89E5C00A017AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B567AF7621F89E5C00A017AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B567AF7C21F89E6800A017AE /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		B567AF7E21F89E7500A017AE /* String+Sub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Sub.swift"; sourceTree = "<group>"; };
-		B567AF8021F89EBD00A017AE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B567AF8221F8A0EF00A017AE /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		B567AF8421F8A39800A017AE /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		B5CC752022016645009AC060 /* RouterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterConfig.swift; sourceTree = "<group>"; };
+		B5CC7525220178BF009AC060 /* YJYTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYTools.swift; sourceTree = "<group>"; };
+		B5CC7526220178BF009AC060 /* YJYRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouter.swift; sourceTree = "<group>"; };
+		B5CC7527220178BF009AC060 /* String+Sub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Sub.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,28 +64,36 @@
 		B567AF6921F89E5B00A017AE /* JYRouter */ = {
 			isa = PBXGroup;
 			children = (
+				B5CC7524220178BF009AC060 /* Source */,
+				B5CC752B22017906009AC060 /* Resources */,
 				B567AF6A21F89E5B00A017AE /* AppDelegate.swift */,
-				B567AF7121F89E5C00A017AE /* Assets.xcassets */,
+				B567AF6C21F89E5B00A017AE /* ViewController.swift */,
 				B567AF8221F8A0EF00A017AE /* BViewController.swift */,
 				B567AF7621F89E5C00A017AE /* Info.plist */,
-				B567AF7321F89E5C00A017AE /* LaunchScreen.storyboard */,
-				B567AF6E21F89E5B00A017AE /* Main.storyboard */,
-				B567AF9621F964B800A017AE /* Source */,
-				B567AF6C21F89E5B00A017AE /* ViewController.swift */,
 				B567AF8421F8A39800A017AE /* WebViewController.swift */,
 			);
 			path = JYRouter;
 			sourceTree = "<group>";
 		};
-		B567AF9621F964B800A017AE /* Source */ = {
+		B5CC7524220178BF009AC060 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B567AF8021F89EBD00A017AE /* Constants.swift */,
-				B567AF7C21F89E6800A017AE /* Router.swift */,
-				B567AF7E21F89E7500A017AE /* String+Sub.swift */,
-				B5CC752022016645009AC060 /* RouterConfig.swift */,
+				B5CC7525220178BF009AC060 /* YJYTools.swift */,
+				B5CC7526220178BF009AC060 /* YJYRouter.swift */,
+				B5CC7527220178BF009AC060 /* String+Sub.swift */,
 			);
-			path = Source;
+			name = Source;
+			path = ../../Source;
+			sourceTree = "<group>";
+		};
+		B5CC752B22017906009AC060 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B567AF7321F89E5C00A017AE /* LaunchScreen.storyboard */,
+				B567AF6E21F89E5B00A017AE /* Main.storyboard */,
+				B567AF7121F89E5C00A017AE /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,13 +168,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B567AF6D21F89E5B00A017AE /* ViewController.swift in Sources */,
+				B5CC752A220178BF009AC060 /* String+Sub.swift in Sources */,
 				B567AF8321F8A0EF00A017AE /* BViewController.swift in Sources */,
-				B567AF8121F89EBD00A017AE /* Constants.swift in Sources */,
-				B567AF7D21F89E6800A017AE /* Router.swift in Sources */,
-				B5CC752122016645009AC060 /* RouterConfig.swift in Sources */,
+				B5CC7528220178BF009AC060 /* YJYTools.swift in Sources */,
+				B5CC7529220178BF009AC060 /* YJYRouter.swift in Sources */,
 				B567AF8521F8A39800A017AE /* WebViewController.swift in Sources */,
 				B567AF6B21F89E5B00A017AE /* AppDelegate.swift in Sources */,
-				B567AF7F21F89E7500A017AE /* String+Sub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

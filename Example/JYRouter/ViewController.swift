@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  JYRouter
 //
-//  Created by 叶金永 on 2019/1/23.
+//  Created by Keyon on 2019/1/23.
 //  Copyright © 2019 Keyon. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 		var params = Parameter()
 		params["title"] = "Keyon"
 		params["userId"] = "123"
-		Router.routeTo("BViewController?title=KeyonOne", params: params)
+		Router.routeTo("BViewController?name=Mike", params: params)
 	}
 	
 	@IBAction func clickTwo(_ sender: Any) {
