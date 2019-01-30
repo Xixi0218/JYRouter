@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "YJYRouter"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "swift的路由."
   s.description  = <<-DESC
                     自己写的一个swift的路由
@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.author       = { "Keyon" => "616115891@qq.com" }
   s.source       = { :git => "https://github.com/616115891/JYRouter.git", :tag => "#{s.version}" }
   s.ios.deployment_target = "10.0"
-  s.source_files = "JYRouter/Source"
+  s.source_files = "Source"
   s.swift_version = "4.2"
 end
