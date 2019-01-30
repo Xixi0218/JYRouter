@@ -54,7 +54,7 @@ open class Router {
 					param
 				}
 			}
-			self.jumpTo(WebViewControllerName, params: customParams, present: present, animated: animated, hidesBottomBarWhenPushed: hidesBottomBarWhenPushed)
+			self.jumpTo(RouterConfig.shared.webViewController, params: customParams, present: present, animated: animated, hidesBottomBarWhenPushed: hidesBottomBarWhenPushed)
 			return
 		}
 		

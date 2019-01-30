@@ -17,6 +17,7 @@
 		B567AF8121F89EBD00A017AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF8021F89EBD00A017AE /* Constants.swift */; };
 		B567AF8321F8A0EF00A017AE /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF8221F8A0EF00A017AE /* BViewController.swift */; };
 		B567AF8521F8A39800A017AE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF8421F8A39800A017AE /* WebViewController.swift */; };
+		B5CC752122016645009AC060 /* RouterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC752022016645009AC060 /* RouterConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B567AF8021F89EBD00A017AE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B567AF8221F8A0EF00A017AE /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		B567AF8421F8A39800A017AE /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		B5CC752022016645009AC060 /* RouterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				B567AF8021F89EBD00A017AE /* Constants.swift */,
 				B567AF7C21F89E6800A017AE /* Router.swift */,
 				B567AF7E21F89E7500A017AE /* String+Sub.swift */,
+				B5CC752022016645009AC060 /* RouterConfig.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				B567AF8321F8A0EF00A017AE /* BViewController.swift in Sources */,
 				B567AF8121F89EBD00A017AE /* Constants.swift in Sources */,
 				B567AF7D21F89E6800A017AE /* Router.swift in Sources */,
+				B5CC752122016645009AC060 /* RouterConfig.swift in Sources */,
 				B567AF8521F8A39800A017AE /* WebViewController.swift in Sources */,
 				B567AF6B21F89E5B00A017AE /* AppDelegate.swift in Sources */,
 				B567AF7F21F89E7500A017AE /* String+Sub.swift in Sources */,
