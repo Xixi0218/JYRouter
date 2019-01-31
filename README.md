@@ -7,8 +7,9 @@
      之前跳转控制器都要
 	 let myquestion = MSMyQuestionViewController()
 	 self.navigationController?.pushViewController(myquestion, animated: true)
-	 现在只要,更好的配置了
-	 Router.routeTo("MSMyQuestionViewController", params: params) 
+	 现在只要
+	 Router.routeTo("MSMyQuestionViewController", params: params)
+	 方便之后跟服务器发现匹配
 ## 3.他有2种传参模式  
 	1.var params = Parameter()  
 	  params["title"] = "Keyon"  
