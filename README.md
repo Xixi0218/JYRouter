@@ -9,7 +9,7 @@
 	 self.navigationController?.pushViewController(myquestion, animated: true)
 	 现在只要
 	 Router.routeTo("MSMyQuestionViewController", params: params)
-	 方便之后跟服务器发现匹配
+	 方便之后跟服务器匹配
 ## 3.他有2种传参模式  
 	1.var params = Parameter()  
 	  params["title"] = "Keyon"  
