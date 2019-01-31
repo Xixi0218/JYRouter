@@ -4,7 +4,7 @@
 ## 1.想使用这个路由首先每个控制器需要遵守Routable协议并且实现它的协议
 
 ## 2.相对比  
-         之前跳转控制器都要
+     之前跳转控制器都要
 	 let myquestion = MSMyQuestionViewController()
 	 self.navigationController?.pushViewController(myquestion, animated: true)
 	 现在只要,更好的配置了
