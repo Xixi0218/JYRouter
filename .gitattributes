@@ -1,4 +1,6 @@
-# Auto detect text files and perform LF normalization
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 * text=auto
 *.xcuserstate 
 project.xcworkspace 
