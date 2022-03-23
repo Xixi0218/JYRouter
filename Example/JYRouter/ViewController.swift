@@ -16,17 +16,16 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func clickOne(_ sender: Any) {
-		var params = YJYParameter()
-		params["title"] = "Keyon"
-		params["userId"] = "123"
-		YJYRouter.routeTo("BViewController?name=Mike", params: params)
+        YJYRouter.default.open(request: YJYBRequest())
 	}
 	
 	@IBAction func clickTwo(_ sender: Any) {
-		var params = YJYParameter()
-		params["title"] = "Keyon"
-		params["userId"] = "123"
-		YJYRouter.routeTo("BViewController", params: params)
+        let baidu = "https://www.baidu.com"
+        let newUrl = "yjy://webView?url=\(baidu)&title=测试".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        if let url = URL(string: newUrl) {
+            YJYRouter.default.open(url: url)
+        }
+        
 	}
 }
 

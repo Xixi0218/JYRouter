@@ -8,14 +8,7 @@
 
 import UIKit
 
-class BViewController: UIViewController,YJYRoutable {
-
-	static func initWithParams(params: YJYParameter?) -> UIViewController {
-		if let params = params {
-			debugPrint(params)
-		}
-		return YJYTools.storyBoradVC(storyBoardName: "Main", identifier: "BViewController")
-	}
+class BViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()

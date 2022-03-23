@@ -9,29 +9,18 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController,WKUIDelegate,YJYRoutable {
+class WebViewController: UIViewController,WKUIDelegate {
 
 	public var webView:WKWebView!
 	
-	private var navTitle:String?
-	private var urlStr:String?
+	var navTitle:String?
+	var urlStr:String?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.title = navTitle
 		self.setupWebView()
     }
-	
-	static func initWithParams(params: YJYParameter?) -> UIViewController {
-		let vc = WebViewController()
-		if let params = params {
-			vc.urlStr = params["url"] as? String
-			if let navTitle = params["title"] as? String {
-				vc.navTitle = navTitle
-			}
-		}
-		return vc
-	}
 	
 	private func setupWebView() {
 		let configuration = WKWebViewConfiguration()

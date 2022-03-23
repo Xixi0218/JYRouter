@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+        YJYRouter.default.resgister(YJYBRequest.self) { request in
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BViewController")
+        }
+        YJYRouter.default.resgister(YJYWebRequest.self) { request in
+            let vc = WebViewController()
+            vc.urlStr = request.urlStr
+            vc.navTitle = request.navTitle
+            return vc
+        }
 		return true
 	}
 
