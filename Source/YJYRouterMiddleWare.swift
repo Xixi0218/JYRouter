@@ -11,6 +11,6 @@ import UIKit
 public protocol YJYRouterMiddleWare {
     
     /// 即将在路由发生之前进行抛错中断
-    func willRoute<T: YJYRouterReuqest>(_ request: T) throws
+    func willRoute(_ url: String) throws
     
 }

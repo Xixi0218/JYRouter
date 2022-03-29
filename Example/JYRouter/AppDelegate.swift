@@ -15,13 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        YJYRouter.default.resgister(YJYBRequest.self) { request in
-            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BViewController")
+        YJYRouter.default.resgister(YJYRouterMenu.market, use: [YJYLoginMiddleWare()]) { queryParams, urlParams in
+            return BViewController()
         }
-        YJYRouter.default.resgister(YJYWebRequest.self) { request in
+        
+        YJYRouter.default.resgister(YJYRouterMenu.login) { queryParams, urlParams in
+            return LoginViewController()
+        }
+        
+        YJYRouter.default.resgister(YJYRouterMenu.detail) { queryParams, urlParams in
             let vc = WebViewController()
-            vc.urlStr = request.urlStr
-            vc.navTitle = request.navTitle
+            vc.navTitle = queryParams.getString(forKey: "title")
+            vc.urlStr = queryParams.getString(forKey: "url")
             return vc
         }
 		return true

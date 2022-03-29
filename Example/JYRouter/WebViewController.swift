@@ -11,7 +11,7 @@ import WebKit
 
 class WebViewController: UIViewController,WKUIDelegate {
 
-	public var webView:WKWebView!
+	private var webView:WKWebView!
 	
 	var navTitle:String?
 	var urlStr:String?

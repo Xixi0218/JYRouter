@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3D26806927EB042300868DE5 /* YJYRouterMiddleWare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26806027EB042200868DE5 /* YJYRouterMiddleWare.swift */; };
-		3D26806A27EB042300868DE5 /* YJYRouterReuqest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26806127EB042200868DE5 /* YJYRouterReuqest.swift */; };
 		3D26806B27EB042300868DE5 /* YJYRouterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26806227EB042200868DE5 /* YJYRouterTool.swift */; };
 		3D26806C27EB042300868DE5 /* YJYRouterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26806327EB042200868DE5 /* YJYRouterNode.swift */; };
 		3D26806D27EB042300868DE5 /* YJYRouterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26806427EB042200868DE5 /* YJYRouterError.swift */; };
@@ -16,8 +15,10 @@
 		3D26806F27EB042300868DE5 /* YJYRouterString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26806627EB042300868DE5 /* YJYRouterString+Extension.swift */; };
 		3D26807027EB042300868DE5 /* YJYRouterParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26806727EB042300868DE5 /* YJYRouterParameters.swift */; };
 		3D26807127EB042300868DE5 /* YJYRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26806827EB042300868DE5 /* YJYRouter.swift */; };
-		3D26807327EB052D00868DE5 /* YJYBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26807227EB052D00868DE5 /* YJYBRequest.swift */; };
-		3D26807527EB055900868DE5 /* YJYWebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26807427EB055900868DE5 /* YJYWebRequest.swift */; };
+		3D27765027F2ECD600380E07 /* YJYRouterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27764F27F2ECD600380E07 /* YJYRouterMenu.swift */; };
+		3D27765227F2ED3200380E07 /* YJYRouterURLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27765127F2ED3200380E07 /* YJYRouterURLConvertible.swift */; };
+		3D27765427F2EDA100380E07 /* YJYLoginMiddleWare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27765327F2EDA100380E07 /* YJYLoginMiddleWare.swift */; };
+		3D27765627F2EF7B00380E07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27765527F2EF7B00380E07 /* LoginViewController.swift */; };
 		B567AF6B21F89E5B00A017AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF6A21F89E5B00A017AE /* AppDelegate.swift */; };
 		B567AF6D21F89E5B00A017AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF6C21F89E5B00A017AE /* ViewController.swift */; };
 		B567AF7021F89E5B00A017AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B567AF6E21F89E5B00A017AE /* Main.storyboard */; };
@@ -29,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		3D26806027EB042200868DE5 /* YJYRouterMiddleWare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouterMiddleWare.swift; sourceTree = "<group>"; };
-		3D26806127EB042200868DE5 /* YJYRouterReuqest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouterReuqest.swift; sourceTree = "<group>"; };
 		3D26806227EB042200868DE5 /* YJYRouterTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouterTool.swift; sourceTree = "<group>"; };
 		3D26806327EB042200868DE5 /* YJYRouterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouterNode.swift; sourceTree = "<group>"; };
 		3D26806427EB042200868DE5 /* YJYRouterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouterError.swift; sourceTree = "<group>"; };
@@ -37,8 +37,10 @@
 		3D26806627EB042300868DE5 /* YJYRouterString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "YJYRouterString+Extension.swift"; sourceTree = "<group>"; };
 		3D26806727EB042300868DE5 /* YJYRouterParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouterParameters.swift; sourceTree = "<group>"; };
 		3D26806827EB042300868DE5 /* YJYRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouter.swift; sourceTree = "<group>"; };
-		3D26807227EB052D00868DE5 /* YJYBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJYBRequest.swift; sourceTree = "<group>"; };
-		3D26807427EB055900868DE5 /* YJYWebRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJYWebRequest.swift; sourceTree = "<group>"; };
+		3D27764F27F2ECD600380E07 /* YJYRouterMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJYRouterMenu.swift; sourceTree = "<group>"; };
+		3D27765127F2ED3200380E07 /* YJYRouterURLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouterURLConvertible.swift; sourceTree = "<group>"; };
+		3D27765327F2EDA100380E07 /* YJYLoginMiddleWare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJYLoginMiddleWare.swift; sourceTree = "<group>"; };
+		3D27765527F2EF7B00380E07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B567AF6721F89E5B00A017AE /* JYRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JYRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B567AF6A21F89E5B00A017AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B567AF6C21F89E5B00A017AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,10 +86,11 @@
 				B5CC752B22017906009AC060 /* Resources */,
 				B567AF6A21F89E5B00A017AE /* AppDelegate.swift */,
 				B567AF6C21F89E5B00A017AE /* ViewController.swift */,
+				3D27765327F2EDA100380E07 /* YJYLoginMiddleWare.swift */,
 				B567AF8221F8A0EF00A017AE /* BViewController.swift */,
+				3D27765527F2EF7B00380E07 /* LoginViewController.swift */,
 				B567AF8421F8A39800A017AE /* WebViewController.swift */,
-				3D26807227EB052D00868DE5 /* YJYBRequest.swift */,
-				3D26807427EB055900868DE5 /* YJYWebRequest.swift */,
+				3D27764F27F2ECD600380E07 /* YJYRouterMenu.swift */,
 				B567AF7621F89E5C00A017AE /* Info.plist */,
 			);
 			path = JYRouter;
@@ -102,9 +105,9 @@
 				3D26806327EB042200868DE5 /* YJYRouterNode.swift */,
 				3D26806727EB042300868DE5 /* YJYRouterParameters.swift */,
 				3D26806527EB042200868DE5 /* YJYRouterPathComponent.swift */,
-				3D26806127EB042200868DE5 /* YJYRouterReuqest.swift */,
 				3D26806627EB042300868DE5 /* YJYRouterString+Extension.swift */,
 				3D26806227EB042200868DE5 /* YJYRouterTool.swift */,
+				3D27765127F2ED3200380E07 /* YJYRouterURLConvertible.swift */,
 			);
 			name = Source;
 			path = ../../Source;
@@ -197,16 +200,17 @@
 				3D26806E27EB042300868DE5 /* YJYRouterPathComponent.swift in Sources */,
 				3D26807027EB042300868DE5 /* YJYRouterParameters.swift in Sources */,
 				B567AF6D21F89E5B00A017AE /* ViewController.swift in Sources */,
+				3D27765427F2EDA100380E07 /* YJYLoginMiddleWare.swift in Sources */,
+				3D27765027F2ECD600380E07 /* YJYRouterMenu.swift in Sources */,
 				B567AF8321F8A0EF00A017AE /* BViewController.swift in Sources */,
+				3D27765227F2ED3200380E07 /* YJYRouterURLConvertible.swift in Sources */,
 				3D26806C27EB042300868DE5 /* YJYRouterNode.swift in Sources */,
-				3D26807527EB055900868DE5 /* YJYWebRequest.swift in Sources */,
-				3D26807327EB052D00868DE5 /* YJYBRequest.swift in Sources */,
 				B567AF8521F8A39800A017AE /* WebViewController.swift in Sources */,
 				3D26807127EB042300868DE5 /* YJYRouter.swift in Sources */,
+				3D27765627F2EF7B00380E07 /* LoginViewController.swift in Sources */,
 				3D26806F27EB042300868DE5 /* YJYRouterString+Extension.swift in Sources */,
 				3D26806927EB042300868DE5 /* YJYRouterMiddleWare.swift in Sources */,
 				B567AF6B21F89E5B00A017AE /* AppDelegate.swift in Sources */,
-				3D26806A27EB042300868DE5 /* YJYRouterReuqest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

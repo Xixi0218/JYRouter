@@ -12,4 +12,5 @@ public enum YJYRouterError: Error {
     case notResigter
     case requestError
     case pathError
+    case urlError
 }

@@ -16,16 +16,11 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func clickOne(_ sender: Any) {
-        YJYRouter.default.open(request: YJYBRequest())
+        YJYRouter.default.push(YJYRouterMenu.market)
 	}
 	
 	@IBAction func clickTwo(_ sender: Any) {
-        let baidu = "https://www.baidu.com"
-        let newUrl = "yjy://webView?url=\(baidu)&title=测试".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        if let url = URL(string: newUrl) {
-            YJYRouter.default.open(url: url)
-        }
-        
+        YJYRouter.default.push(YJYRouterMenu.detail, params: ["url": "https://www.baidu.com", "title": "测试"])
 	}
 }
 
