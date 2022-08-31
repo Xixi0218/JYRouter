@@ -31,18 +31,15 @@ public class YJYRouter {
     ///   - middleWares: 中间件
     ///   - handler: 响应事件
     public func resgister(_ pattern: YJYRouterURLConvertible,
-                          use middleWares: [YJYRouterMiddleWare] = [],
+                          use middleWares: [YJYRouterMiddleWare]? = nil,
                           handler: @escaping YJYURLRequestHandler) {
         queue.async(flags: .barrier) { [weak self] in
             guard let self = self else { return }
             if let validUrl = pattern.yjy_url {
                 let urlHandler: YJYURLRequestHandler = { queryItems, parameter in
-                    for middleWare in middleWares {
-                        try middleWare.willRoute(validUrl.yjy_fullRoute)
-                    }
                     return try handler(queryItems, parameter)
                 }
-                self.rootNode.register(urlHandler, at: validUrl.yjy_pathComponents)
+                self.rootNode.register(urlHandler, middleWares: middleWares, at: validUrl.yjy_pathComponents)
             } else {
                 assertionFailure("无效的url")
             }
@@ -52,13 +49,14 @@ public class YJYRouter {
     /// 根据path获取树中对应节点下的handler和信息
     /// - Parameter path: url的path字符串
     /// - Returns: 返回handler和parameters
-    private func getUrlHandlerByPath(path: [String]) -> (handle: YJYURLRequestHandler?, parameters: YJYRouterParameters) {
+    private func getUrlHandlerByPath(path: [String]) -> (handle: YJYURLRequestHandler?, parameters: YJYRouterParameters, middleWares: [YJYRouterMiddleWare]?) {
         var parameters = YJYRouterParameters()
         var handle: YJYURLRequestHandler?
+        var middleWares: [YJYRouterMiddleWare]?
         queue.sync {
-            handle = rootNode.route(path: path, parameters: &parameters)
+            (handle, middleWares) = rootNode.route(path: path, parameters: &parameters)
         }
-        return (handle, parameters)
+        return (handle, parameters, middleWares)
     }
     
     /// 根据url发起路由请求
@@ -67,9 +65,45 @@ public class YJYRouter {
     ///   - params: 路由参数
     /// - Returns: 返回一个响应体
     public func request(_ pattern: YJYRouterURLConvertible,
-                        params: [String: Any] = [:]) throws -> Any {
+                        params: [String: Any] = [:],
+                        isRedirect: Bool = false) throws -> Any? {
         if let url = pattern.yjy_url {
             let result = getUrlHandlerByPath(path: url.yjy_paths)
+
+            // 如果是重定向操作就不执行插件
+            if !isRedirect {
+                if let middleWares = result.middleWares {
+                    for middleWare in middleWares {
+                        do {
+                            try middleWare.willRoute(url.yjy_fullRoute)
+                        } catch let error as YJYRouterError {
+                            if case let .redirect(url, action) = error {
+                                switch action {
+                                case .none:
+                                    if let object = try? request(url, isRedirect: isRedirect) {
+                                        throw YJYRouterError.redirectObject(object: object)
+                                    } else {
+                                        throw YJYRouterError.notResigter
+                                    }
+                                case .push:
+                                    if let vc = self.push(url, isRedirect: true) {
+                                        throw YJYRouterError.redirectObject(object: vc)
+                                    } else {
+                                        throw YJYRouterError.requestError
+                                    }
+                                case .present:
+                                    if let vc = self.present(url, isRedirect: true) {
+                                        throw YJYRouterError.redirectObject(object: vc)
+                                    } else {
+                                        throw YJYRouterError.requestError
+                                    }
+                                }
+                            }
+                        } catch {}
+                    }
+                }
+            }
+
             if let handle = result.handle {
                 var customParams = params
                 customParams.merge(url.yjy_queryParameters) { (current, _)  in current }
@@ -77,7 +111,7 @@ public class YJYRouter {
             }
             return YJYRouterError.requestError
         }
-        throw YJYRouterError.urlError
+        throw YJYRouterError.notResigter
     }
     
     @discardableResult
@@ -89,8 +123,9 @@ public class YJYRouter {
     /// - Returns: 返回路由表里对应vc
     public func push(_ pattern: YJYRouterURLConvertible,
                      params: [String: Any] = [:],
-                     animated: Bool = true) -> UIViewController? {
-        if let result = try? self.request(pattern, params: params) as? UIViewController {
+                     animated: Bool = true,
+                     isRedirect: Bool = false) -> UIViewController? {
+        if let result = try? self.request(pattern, params: params, isRedirect: isRedirect) as? UIViewController {
             action(vc: result, actionType: .push, animated: animated)
             return result
         }
@@ -108,8 +143,9 @@ public class YJYRouter {
     public func present(_ pattern: YJYRouterURLConvertible,
                         params: [String: Any] = [:],
                         animated: Bool = true,
+                        isRedirect: Bool = false,
                         completion: (() -> Void)? = nil) -> UIViewController? {
-        if let result = try? self.request(pattern, params: params) as? UIViewController {
+        if let result = try? self.request(pattern, params: params, isRedirect: isRedirect) as? UIViewController {
             action(vc: result, actionType: .present, animated: animated, completion: completion)
             return result
         }

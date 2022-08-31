@@ -10,14 +10,11 @@ import UIKit
 
 class YJYLoginMiddleWare: YJYRouterMiddleWare {
     
-    private var isLogin = true
+    private var isLogin = false
     
     func willRoute(_ url: String) throws {
         guard isLogin else {
-            if url != YJYRouterMenu.login {
-                YJYRouter.default.present(YJYRouterMenu.login)
-            }
-            throw YJYRouterError.pathError
+            throw YJYRouterError.redirect(url: YJYRouterMenu.market, action: .present)
         }
     }
 }

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return BViewController()
         }
         
-        YJYRouter.default.resgister(YJYRouterMenu.login) { queryParams, urlParams in
+        YJYRouter.default.resgister(YJYRouterMenu.login, use: [YJYLoginMiddleWare()]) { queryParams, urlParams in
             return LoginViewController()
         }
         

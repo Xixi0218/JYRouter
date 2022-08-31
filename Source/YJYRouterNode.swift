@@ -20,7 +20,7 @@ public final class YJYRouterNode: CustomStringConvertible {
     /// - Parameters:
     ///   - output: root包含的对象
     ///   - path: 对应path数组
-    public func register(_ output:@escaping YJYURLRequestHandler, at path: [YJYRouterPathComponent]) {
+    public func register(_ output:@escaping YJYURLRequestHandler, middleWares: [YJYRouterMiddleWare]?, at path: [YJYRouterPathComponent]) {
         var current = self.root
         for (index, component) in path.enumerated() {
             switch component {
@@ -37,6 +37,7 @@ public final class YJYRouterNode: CustomStringConvertible {
         }
         
         current.output = output
+        current.middleWare = middleWares
     }
     
     /// 在根节点中找出对应符合路由的节点并收集动态参数
@@ -44,7 +45,7 @@ public final class YJYRouterNode: CustomStringConvertible {
     ///   - path: url的路径
     ///   - parameters: 收集动态参数的对象
     /// - Returns: 返回对应handler
-    public func route(path: [String], parameters: inout YJYRouterParameters) -> YJYURLRequestHandler? {
+    public func route(path: [String], parameters: inout YJYRouterParameters) -> (YJYURLRequestHandler?, [YJYRouterMiddleWare]?) {
         var currentNode: Node = self.root
         var currentCatchall: (Node, [String])?
         search: for (index, slice) in path.enumerated() {
@@ -68,19 +69,19 @@ public final class YJYRouterNode: CustomStringConvertible {
             
             if let (catchall, subpaths) = currentCatchall {
                 parameters.setCatchall(matched: subpaths)
-                return catchall.output
+                return (catchall.output, catchall.middleWare)
             } else {
-                return nil
+                return (nil, nil)
             }
         }
         
         if let output = currentNode.output {
-            return output
+            return (output, currentNode.middleWare)
         } else if let (catchall, subpaths) = currentCatchall {
             parameters.setCatchall(matched: subpaths)
-            return catchall.output
+            return (catchall.output, catchall.middleWare)
         } else {
-            return nil
+            return (nil, nil)
         }
     }
     
@@ -137,7 +138,9 @@ extension YJYRouterNode {
         
         ///输出参数
         var output: YJYURLRequestHandler?
-        
+        /// 中间件
+        var middleWare: [YJYRouterMiddleWare]?
+
         ///初始化
         init(output: YJYURLRequestHandler? = nil) {
             self.output = output
