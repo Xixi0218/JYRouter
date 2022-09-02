@@ -14,7 +14,7 @@ class YJYLoginMiddleWare: YJYRouterMiddleWare {
     
     func willRoute(_ url: String) throws {
         guard isLogin else {
-            throw YJYRouterError.redirect(url: YJYRouterMenu.market, action: .present)
+            throw YJYRouterError.redirect(url: YJYRouterMenu.market, action: .present, isExcuteMiddleWares: false)
         }
     }
 }

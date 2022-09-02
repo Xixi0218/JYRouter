@@ -11,7 +11,7 @@ import UIKit
 public enum YJYRouterError: Error {
     case notResigter
     case requestError
-    case redirect(url: String, action: YJYRouterAction)
+    case redirect(url: String, action: YJYRouterAction, isExcuteMiddleWares: Bool)
     case redirectObject(object: Any)
 }
 
