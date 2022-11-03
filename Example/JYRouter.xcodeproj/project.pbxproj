@@ -19,6 +19,7 @@
 		3D27765227F2ED3200380E07 /* YJYRouterURLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27765127F2ED3200380E07 /* YJYRouterURLConvertible.swift */; };
 		3D27765427F2EDA100380E07 /* YJYLoginMiddleWare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27765327F2EDA100380E07 /* YJYLoginMiddleWare.swift */; };
 		3D27765627F2EF7B00380E07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27765527F2EF7B00380E07 /* LoginViewController.swift */; };
+		3DCF2F0429134F05005898E8 /* YJYCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF2F0329134F05005898E8 /* YJYCompatible.swift */; };
 		B567AF6B21F89E5B00A017AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF6A21F89E5B00A017AE /* AppDelegate.swift */; };
 		B567AF6D21F89E5B00A017AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567AF6C21F89E5B00A017AE /* ViewController.swift */; };
 		B567AF7021F89E5B00A017AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B567AF6E21F89E5B00A017AE /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		3D27765127F2ED3200380E07 /* YJYRouterURLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJYRouterURLConvertible.swift; sourceTree = "<group>"; };
 		3D27765327F2EDA100380E07 /* YJYLoginMiddleWare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJYLoginMiddleWare.swift; sourceTree = "<group>"; };
 		3D27765527F2EF7B00380E07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3DCF2F0329134F05005898E8 /* YJYCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJYCompatible.swift; sourceTree = "<group>"; };
 		B567AF6721F89E5B00A017AE /* JYRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JYRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B567AF6A21F89E5B00A017AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B567AF6C21F89E5B00A017AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				3D26806627EB042300868DE5 /* YJYRouterString+Extension.swift */,
 				3D26806227EB042200868DE5 /* YJYRouterTool.swift */,
 				3D27765127F2ED3200380E07 /* YJYRouterURLConvertible.swift */,
+				3DCF2F0329134F05005898E8 /* YJYCompatible.swift */,
 			);
 			name = Source;
 			path = ../../Source;
@@ -207,6 +210,7 @@
 				3D26806C27EB042300868DE5 /* YJYRouterNode.swift in Sources */,
 				B567AF8521F8A39800A017AE /* WebViewController.swift in Sources */,
 				3D26807127EB042300868DE5 /* YJYRouter.swift in Sources */,
+				3DCF2F0429134F05005898E8 /* YJYCompatible.swift in Sources */,
 				3D27765627F2EF7B00380E07 /* LoginViewController.swift in Sources */,
 				3D26806F27EB042300868DE5 /* YJYRouterString+Extension.swift in Sources */,
 				3D26806927EB042300868DE5 /* YJYRouterMiddleWare.swift in Sources */,

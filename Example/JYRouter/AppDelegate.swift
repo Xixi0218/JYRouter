@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         YJYRouter.default.resgister(YJYRouterMenu.detail) { queryParams, urlParams in
             let vc = WebViewController()
-            vc.navTitle = queryParams.getString(forKey: "title")
-            vc.urlStr = queryParams.getString(forKey: "url")
+            vc.navTitle = queryParams.yjy.getString(forKey: "title")
+            vc.urlStr = queryParams.yjy.getString(forKey: "url")
             return vc
         }
 		return true

@@ -39,7 +39,7 @@ public class YJYRouter {
                 let urlHandler: YJYURLRequestHandler = { queryItems, parameter in
                     return try handler(queryItems, parameter)
                 }
-                self.rootNode.register(urlHandler, middleWares: middleWares, at: validUrl.yjy_pathComponents)
+                self.rootNode.register(urlHandler, middleWares: middleWares, at: validUrl.yjy.pathComponents)
             } else {
                 assertionFailure("无效的url")
             }
@@ -55,7 +55,7 @@ public class YJYRouter {
                         params: [String: Any] = [:],
                         isExcuteMiddleWares: Bool = true) throws -> Any? {
         guard let url = pattern.yjy_url else { throw YJYRouterError.notResigter }
-        let result = getUrlHandlerByPath(path: url.yjy_paths)
+        let result = getUrlHandlerByPath(path: url.yjy.hostSplitPaths)
 
         // 如果是重定向操作就不执行插件
         if isExcuteMiddleWares {
@@ -64,7 +64,7 @@ public class YJYRouter {
 
         guard let handle = result.handle else { throw YJYRouterError.requestError }
         var customParams = params
-        customParams.merge(url.yjy_queryParameters) { (current, _)  in current }
+        customParams.merge(url.yjy.queryParameters) { (current, _)  in current }
         return try handle(customParams, result.parameters)
     }
     
@@ -144,7 +144,7 @@ public class YJYRouter {
         guard let middleWares = middleWares else { return }
         for middleWare in middleWares {
             do {
-                try middleWare.willRoute(url.yjy_fullRoute)
+                try middleWare.willRoute(url.yjy.fullRoute)
             } catch let error as YJYRouterError {
                 if case let .redirect(url, action, isExcuteMiddleWares) = error {
                     switch action {
